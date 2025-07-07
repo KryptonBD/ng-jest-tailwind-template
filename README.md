@@ -1,6 +1,47 @@
-# NgJestTailwind
+# Angular + Jest + Tailwind CSS Template
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+After setting up the same Angular + Jest + Tailwind stack repeatedly across projects, I created this template to save time on configuration. Skip the setup and start coding immediately.
+
+This template also maintains opinionated default (like naming suffixes) that the Angular team removed, but many developers still prefer for better code organization.
+
+**From idea to development in seconds, not hours.**
+
+## Architecture
+
+This template combines three powerful technologies:
+
+- **Angular 20**: Modern TypeScript framework with standalone components and zoneless change detection
+- **Jest**: Fast JavaScript testing framework with jest-preset-angular
+- **Tailwind CSS v4**: Latest utility-first CSS framework with PostCSS integration
+
+### Key Features
+
+- Standalone components architecture (no NgModules)
+- Zoneless change detection for better performance
+- Enforced naming suffixes (.component, .service, etc.) - maintained for better code organization despite Angular team removing them
+- OnPush change detection strategy by default for better performance
+- Jest testing with jest-preset-angular
+- Tailwind CSS v4 with PostCSS configuration
+- TypeScript 5.8 with strict mode
+- Prettier formatting with Angular template support
+
+### Project Structure
+
+```
+src/
+├── app/
+│   ├── core/
+│   │   ├── interceptors/   # HTTP interceptors
+│   │   └── services/       # Core application services
+│   ├── features/           # Feature modules/components
+│   ├── shared/
+│   │   └── models/         # Shared TypeScript interfaces
+│   ├── app.config.ts       # Application configuration
+│   ├── app.routes.ts       # Route definitions
+│   └── app.ts              # Root component
+├── environments/           # Environment configurations
+└── styles.scss             # Global styles with Tailwind imports
+```
 
 ## Development server
 
@@ -38,10 +79,22 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 ## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+This template uses Jest with jest-preset-angular for faster testing:
 
 ```bash
-ng test
+npm test
+```
+
+For watch mode:
+
+```bash
+npm run test:watch
+```
+
+For coverage:
+
+```bash
+npm run test:coverage
 ```
 
 ## Running end-to-end tests
